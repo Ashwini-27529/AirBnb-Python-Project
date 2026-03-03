@@ -1,127 +1,147 @@
-# 🏙️ Airbnb New York 2024 – Data Analysis using Python
+# 🏙️ Airbnb New York 2024 – Pricing & Market Analysis using Python
 
-## 📌 Project Overview
+## 📌 Introduction
 
-This project performs an **exploratory data analysis (EDA)** on the **Airbnb New York 2024 dataset** using Python. The goal is to analyze pricing patterns, neighborhood trends, and listing characteristics to derive meaningful insights that can help understand Airbnb market dynamics in New York City.
+The Airbnb market in New York City is highly competitive, with thousands of listings across different boroughs. Pricing varies significantly depending on location, property size, and listing characteristics.
 
-The analysis focuses on **data cleaning, feature engineering, aggregation, and insights generation**, making it a strong beginner-to-intermediate level data analytics project.
+This project performs an end-to-end **Exploratory Data Analysis (EDA)** on the Airbnb New York 2024 dataset using Python to uncover pricing patterns, borough-level trends, and normalized cost insights.
 
 ---
 
-## 📂 Dataset
+## ❓ Problem Statement
 
-* **Source:** Airbnb New York Listings 2024
-* **Format:** CSV
-* **Records:** Multiple listings across NYC
-* **Key Columns:**
+Raw listing prices alone do not provide a meaningful comparison because:
 
-  * `price`
-  * `beds`, `bedrooms`, `baths`
-  * `neighbourhood_group`, `neighbourhood`
-  * `room_type`
-  * `availability_365`
-  * `number_of_reviews`, `rating`
+- Listings have different numbers of beds  
+- Some properties contain extreme price outliers  
+- Pricing varies significantly across boroughs  
+- Central locations may inflate overall averages  
+
+Without proper cleaning and normalization, pricing comparisons can be misleading.
+
+---
+
+## 🎯 Project Goal
+
+The objectives of this project were to:
+
+- Clean and preprocess the Airbnb NYC dataset  
+- Remove extreme pricing outliers  
+- Engineer a **price-per-bed** metric for fair comparison  
+- Compare borough-level pricing trends  
+- Extract actionable insights from the data  
+
+---
+
+## 📂 Dataset Information
+
+- **Dataset:** Airbnb New York Listings 2024  
+- **Total Listings Analyzed:** 20,770  
+- **Format:** CSV  
+
+### Key Features Used:
+- `price`
+- `beds`
+- `neighbourhood_group`
+- `room_type`
+- `availability_365`
+- `number_of_reviews`
+- `rating`
 
 ---
 
 ## 🛠️ Tools & Technologies Used
 
-* **Python**
-* **Pandas** – data cleaning & manipulation
-* **NumPy** – numerical operations
-* **Jupyter Notebook** – analysis environment
+- **Python**
+- **Pandas** – Data cleaning & aggregation  
+- **NumPy** – Numerical operations  
+- **Jupyter Notebook** – Analysis environment  
 
 ---
 
-## 🔍 Key Analysis Performed
+## 🔍 Methodology
 
 ### 1️⃣ Data Cleaning
 
-* Converted numeric columns (`price`, `beds`) to appropriate data types
-* Handled missing and invalid values
-* Addressed zero-bed listings to avoid incorrect calculations
+- Converted `price` and `beds` columns to numeric format  
+- Handled missing and invalid values  
+- Removed extreme outliers (price < $1500)  
+- Addressed zero-bed listings to prevent division errors  
+
+---
 
 ### 2️⃣ Feature Engineering
 
-Created a new metric:
+Created a normalized pricing metric:
 
 ```python
 price_per_bed = price / beds
-```
-
-This feature helps normalize listing prices and allows fair comparison across properties with different bed counts.
-
-### 3️⃣ Aggregation & Grouping
-
-* Calculated **average price per bed by neighbourhood group**
-* Compared pricing trends across NYC boroughs
-
-### 4️⃣ Exploratory Insights
-
-* Manhattan listings have the **highest average price per bed**
-* Brooklyn follows closely, indicating strong demand
-* Staten Island and Bronx show comparatively lower pricing
 
 ---
 
-## 📊 Sample Result
+## 3️⃣ Aggregation & Grouping
 
-| Neighbourhood Group | Avg Price per Bed |
-| ------------------- | ----------------- |
-| Manhattan           | Highest           |
-| Brooklyn            | High              |
-| Queens              | Medium            |
-| Bronx               | Low               |
-| Staten Island       | Lowest            |
+Used Pandas `groupby()` to compute:
+
+- Average price by neighbourhood group  
+- Average price per bed by borough  
+- Percentage comparison across boroughs  
 
 ---
 
-## 📈 Key Insights
+## 📊 Key Outcomes 
 
-* Location plays a **major role in pricing**
-* Price-per-bed is a more reliable metric than raw price
-* Central areas command premium rates even for smaller listings
+### 🔢 Overall Pricing Statistics
 
----
-
-## 🚀 How to Run the Project
-
-#1. Clone the repository
-
-   ```bash
-   git clone https://github.com/Ashwini-27529/AirBnb-Python-Project.git
-   ```
-
-#2. Navigate to the project folder
-
-   ```bash
-   cd AirBnb-Python-Project
-   ```
-
-#3. Open the notebook
-
-   ```bash
-   jupyter notebook
-   ```
-
-#4. Run `AirBnb Python Project.ipynb`
+- **Total Listings:** 20,770  
+- **Average Listing Price:** $187.71  
+- **Price Range (before filtering):** $10 – $100,000  
+- **Outlier Filter Applied:** Price < $1500  
 
 ---
 
-## 📌 Project Highlights (Resume Ready)
+### 🏙️ Average Price by Borough
 
-* Performed end-to-end EDA on Airbnb NYC dataset using Python
-* Engineered pricing metrics to enable fair comparison across listings
-* Analyzed neighborhood-level pricing trends to extract business insights
+| Borough         | Average Price ($) |
+|-----------------|-------------------|
+| Manhattan       | 204.15 |
+| Brooklyn        | 155.14 |
+| Queens          | 124.67 |
+| Staten Island   | 115.54 |
+| Bronx           | 92.76 |
 
----
-
-## 📬 Contact
-
-**Ashwini Shetty**
-MCA Student | Aspiring Data Analyst
-GitHub: [Ashwini-27529](https://github.com/Ashwini-27529)
+- Manhattan is **31% more expensive than Brooklyn** on average.
 
 ---
 
-⭐ If you like this project, don’t forget to star the repository!
+### 🛏️ Average Price Per Bed (Engineered Metric)
+
+| Borough         | Avg Price per Bed ($) |
+|-----------------|-----------------------|
+| Manhattan       | 138.71 |
+| Brooklyn        | 99.79 |
+| Queens          | 76.34 |
+| Staten Island   | 71.88 |
+| Bronx           | 63.52 |
+
+- Manhattan charges **~39% more per bed than Brooklyn**.  
+- Bronx has the lowest normalized cost per bed.  
+
+---
+
+## 📈 Business Insights
+
+- Location strongly influences Airbnb pricing.  
+- Manhattan dominates premium pricing across both raw price and normalized price-per-bed.  
+- Price-per-bed is a more reliable metric than raw listing price.  
+- Outer boroughs present lower-cost hosting opportunities.  
+- Removing outliers provides a more realistic market representation.  
+
+---
+
+## 📸 Project Output Screenshot
+
+After uploading your image to the repository, add:
+
+```markdown
+![Borough Price Analysis](borough_analysis.png)

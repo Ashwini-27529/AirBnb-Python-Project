@@ -1,6 +1,6 @@
 # 🏙️ Airbnb New York 2024 – Pricing & Market Analysis using Python
 
-## 📌 Introduction
+##  Introduction
 
 The Airbnb market in New York City is highly competitive, with thousands of listings across different boroughs. Pricing varies significantly depending on location, property size, and listing characteristics.
 
@@ -8,7 +8,7 @@ This project performs an end-to-end **Exploratory Data Analysis (EDA)** on the A
 
 ---
 
-## ❓ Problem Statement
+##  Problem Statement
 
 Raw listing prices alone do not provide a meaningful comparison because:
 
@@ -21,7 +21,7 @@ Without proper cleaning and normalization, pricing comparisons can be misleading
 
 ---
 
-## 🎯 Project Goal
+##  Project Goal
 
 The objectives of this project were to:
 
@@ -33,7 +33,7 @@ The objectives of this project were to:
 
 ---
 
-## 📂 Dataset Information
+##  Dataset Information
 
 - **Dataset:** Airbnb New York Listings 2024  
 - **Total Listings Analyzed:** 20,770  
@@ -50,7 +50,7 @@ The objectives of this project were to:
 
 ---
 
-## 🛠️ Tools & Technologies Used
+##  Tools & Technologies Used
 
 - **Python**
 - **Pandas** – Data cleaning & aggregation  
@@ -59,9 +59,9 @@ The objectives of this project were to:
 
 ---
 
-## 🔍 Methodology
+##  Methodology
 
-### 1️⃣ Data Cleaning
+### 1️ Data Cleaning
 
 - Converted `price` and `beds` columns to numeric format  
 - Handled missing and invalid values  
@@ -70,7 +70,7 @@ The objectives of this project were to:
 
 ---
 
-### 2️⃣ Feature Engineering
+### 2️ Feature Engineering
 
 Created a normalized pricing metric:
 
@@ -79,7 +79,7 @@ price_per_bed = price / beds
 ```
 ---
 
-## 3️⃣ Aggregation & Grouping
+## 3️ Aggregation & Grouping
 
 Used Pandas `groupby()` to compute:
 
@@ -91,7 +91,7 @@ Used Pandas `groupby()` to compute:
 
 ## 📊 Key Outcomes 
 
-### 🔢 Overall Pricing Statistics
+###  Overall Pricing Statistics
 
 - **Total Listings:** 20,770  
 - **Average Listing Price:** $187.71  
@@ -100,7 +100,7 @@ Used Pandas `groupby()` to compute:
 
 ---
 
-### 🏙️ Average Price by Borough
+###  Average Price by Borough
 
 | Borough         | Average Price ($) |
 |-----------------|-------------------|
@@ -114,7 +114,7 @@ Used Pandas `groupby()` to compute:
 
 ---
 
-### 🛏️ Average Price Per Bed (Engineered Metric)
+###  Average Price Per Bed (Engineered Metric)
 
 | Borough         | Avg Price per Bed ($) |
 |-----------------|-----------------------|
@@ -129,7 +129,7 @@ Used Pandas `groupby()` to compute:
 
 ---
 
-## 📈 Business Insights
+##  Business Insights
 
 - Location strongly influences Airbnb pricing.  
 - Manhattan dominates premium pricing across both raw price and normalized price-per-bed.  
@@ -139,17 +139,21 @@ Used Pandas `groupby()` to compute:
 
 ---
 
-## 📸 Project Output Screenshot
-
-
-![Availability 365 Distribution](https://github.com/Ashwini-27529/Airbnb-New-York-2024-Python-Data-Analysis/blob/main/Images/Availability%20365%20distribution.png)
-
-![Geographical Distribution](https://github.com/Ashwini-27529/Airbnb-New-York-2024-Python-Data-Analysis/blob/main/Images/Geographical%20Distribution.png)
-
-![Heatmap](https://github.com/Ashwini-27529/Airbnb-New-York-2024-Python-Data-Analysis/blob/main/Images/Heatmap.png)
-
-![Locality and Review Dependence](https://github.com/Ashwini-27529/Airbnb-New-York-2024-Python-Data-Analysis/blob/main/Images/Locality%20and%20Review%20Dependency.png)
-
+## Output 
+#Price Distribution
 ![Price Distribution](https://github.com/Ashwini-27529/Airbnb-New-York-2024-Python-Data-Analysis/blob/main/Images/Price%20Distribution.png)
 
+#Availability 365 Distribution
+![Availability 365 Distribution](https://github.com/Ashwini-27529/Airbnb-New-York-2024-Python-Data-Analysis/blob/main/Images/Availability%20365%20distribution.png)
 
+#Geographical Distribution
+![Geographical Distribution](https://github.com/Ashwini-27529/Airbnb-New-York-2024-Python-Data-Analysis/blob/main/Images/Geographical%20Distribution.png)
+
+#Locality and Review Dependence
+![Locality and Review Dependence](https://github.com/Ashwini-27529/Airbnb-New-York-2024-Python-Data-Analysis/blob/main/Images/Locality%20and%20Review%20Dependency.png)
+
+#Neighbourhood_Group
+![neighbourhood_Group](https://github.com/Ashwini-27529/Airbnb-New-York-2024-Python-Data-Analysis/blob/main/Images/neighbourhood_Group.png)
+
+#Heatmap
+![Heatmap](https://github.com/Ashwini-27529/Airbnb-New-York-2024-Python-Data-Analysis/blob/main/Images/Heatmap.png)

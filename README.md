@@ -143,4 +143,8 @@ Used Pandas `groupby()` to compute:
 
 After uploading your image to the repository, add:
 
-![Availability 365 Distribution](availability_365_distribution.png)
+![Availability 365 Distribution](Availability 365 distribution.png)
+
+
+
+
